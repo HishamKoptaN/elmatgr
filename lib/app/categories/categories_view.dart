@@ -35,9 +35,11 @@ class _CategoriesViewState extends State<CategoriesView> {
                 final category = controller.categories[index];
                 return GestureDetector(
                   onTap: () async {
-                    await Get.to(SingleCategoryView(
-                      category: '${category['category_title']}',
-                    ));
+                    await Get.to(
+                      SingleCategoryView(
+                        category: '${category['category_title']}',
+                      ),
+                    );
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

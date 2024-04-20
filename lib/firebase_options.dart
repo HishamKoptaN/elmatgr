@@ -44,40 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCRub71c71ESkqFDiFPbcBhwuDc31bB_pA',
-    appId: '1:219848903601:web:fcf7fddac8ff55e94d0b90',
-    messagingSenderId: '219848903601',
-    projectId: 'ecommerce-f875c',
-    authDomain: 'ecommerce-f875c.firebaseapp.com',
-    storageBucket: 'ecommerce-f875c.appspot.com',
-    measurementId: 'G-8CXGK0L03W',
+    apiKey: 'AIzaSyDfvEW6HBsHnMuIYeR06Q3T1XVfJzQcpPI',
+    appId: '1:310700366975:web:32d863bac94a6edb9cf34a',
+    messagingSenderId: '310700366975',
+    projectId: 'elmatgr-ec97a',
+    authDomain: 'elmatgr-ec97a.firebaseapp.com',
+    storageBucket: 'elmatgr-ec97a.appspot.com',
+    measurementId: 'G-LLT1J8G72K',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD5nTMhAY69l7Z_f1039Br3bZuZ_ti0juI',
-    appId: '1:219848903601:android:2b0ca24bd4e0c1e84d0b90',
-    messagingSenderId: '219848903601',
-    projectId: 'ecommerce-f875c',
-    storageBucket: 'ecommerce-f875c.appspot.com',
+    apiKey: 'AIzaSyCIIrl81K-yvDQUHQoGvn2YRmpKWFdoxLA',
+    appId: '1:310700366975:android:0993e393ff40cc199cf34a',
+    messagingSenderId: '310700366975',
+    projectId: 'elmatgr-ec97a',
+    storageBucket: 'elmatgr-ec97a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBfS07bzCdPToT6Sf11_HjToiKsD4Fw7mI',
-    appId: '1:219848903601:ios:686217699e60a0d34d0b90',
-    messagingSenderId: '219848903601',
-    projectId: 'ecommerce-f875c',
-    storageBucket: 'ecommerce-f875c.appspot.com',
-    iosClientId: '219848903601-ado75t20jlf28g5tub2gfus6piovtijs.apps.googleusercontent.com',
-    iosBundleId: 'com.wasem.sezonApp',
+    apiKey: 'AIzaSyDY4t4ZdZ5j0AJ0udsuCldXm9q3_MzaAe4',
+    appId: '1:310700366975:ios:b8539bc92ca748339cf34a',
+    messagingSenderId: '310700366975',
+    projectId: 'elmatgr-ec97a',
+    storageBucket: 'elmatgr-ec97a.appspot.com',
+    iosBundleId: 'com.example.elmatgr',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBfS07bzCdPToT6Sf11_HjToiKsD4Fw7mI',
-    appId: '1:219848903601:ios:ffbd35209497efff4d0b90',
-    messagingSenderId: '219848903601',
-    projectId: 'ecommerce-f875c',
-    storageBucket: 'ecommerce-f875c.appspot.com',
-    iosClientId: '219848903601-95jufb76jvk76vure40hpl9cs7qla7dn.apps.googleusercontent.com',
-    iosBundleId: 'com.wasem.sezonApp.RunnerTests',
+    apiKey: 'AIzaSyDY4t4ZdZ5j0AJ0udsuCldXm9q3_MzaAe4',
+    appId: '1:310700366975:ios:cb747b586f6f5ee69cf34a',
+    messagingSenderId: '310700366975',
+    projectId: 'elmatgr-ec97a',
+    storageBucket: 'elmatgr-ec97a.appspot.com',
+    iosBundleId: 'com.example.elmatgr.RunnerTests',
   );
 }

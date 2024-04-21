@@ -57,28 +57,31 @@ class _MyFavoritesViewState extends State<MyFavoritesView> {
                             child: Container(
                               height: context.screenHeight * 25,
                               width: context.screenWidth * 100,
-                              decoration: BoxDecoration(
-                                color: Colors.green[400],
-                                borderRadius: BorderRadius.circular(10),
+                              decoration: const BoxDecoration(
+                                color: Color.fromARGB(77, 196, 194, 194),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
+                                    const Spacer(),
                                     Image.network(
                                       document['product_image'],
                                       fit: BoxFit.cover,
                                       height: context.screenHeight * 20,
                                       width: context.screenWidth * 35,
                                     ),
-                                    const Spacer(
-                                      flex: 01,
-                                    ),
+                                    const Spacer(),
                                     Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
+                                        const Spacer(),
                                         MyText(
                                           fontSize:
                                               context.screenSize * threeFont,
@@ -86,9 +89,7 @@ class _MyFavoritesViewState extends State<MyFavoritesView> {
                                               '${document['product_name']}',
                                           direction: true,
                                         ),
-                                        const Spacer(
-                                          flex: 01,
-                                        ),
+                                        const Spacer(),
                                         MyText(
                                           fontSize:
                                               context.screenSize * threeFont,
@@ -96,90 +97,102 @@ class _MyFavoritesViewState extends State<MyFavoritesView> {
                                               '\$سعر المنتج: ${document['product_price']}',
                                           direction: true,
                                         ),
-                                        const Spacer(
-                                          flex: 01,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                Get.to(AddOrderView(productId));
-                                              },
-                                              child: Container(
-                                                width: context.screenWidth * 30,
-                                                height:
-                                                    context.screenHeight * 7.5,
-                                                decoration: const BoxDecoration(
-                                                  color: Colors.green,
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                    Radius.circular(10),
+                                        const Spacer(),
+                                        SizedBox(
+                                          width: context.screenWidth * 50,
+                                          height: context.screenHeight * 10,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              const Spacer(),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  Get.to(
+                                                      AddOrderView(productId));
+                                                },
+                                                child: Container(
+                                                  width:
+                                                      context.screenWidth * 30,
+                                                  height: context.screenHeight *
+                                                      7.5,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                    color: Colors.green,
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                      Radius.circular(10),
+                                                    ),
                                                   ),
-                                                ),
-                                                child: Center(
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      const Spacer(),
-                                                      Icon(
-                                                        CupertinoIcons
-                                                            .cart_fill,
-                                                        color: Colors.black,
-                                                        size:
-                                                            context.screenSize *
-                                                                0.12,
-                                                      ),
-                                                      const Spacer(),
-                                                      MyText(
-                                                        fontSize:
-                                                            context.screenSize *
-                                                                fourFont,
-                                                        fieldName: 'اطلب الان',
-                                                        direction: true,
-                                                      ),
-                                                      const Spacer(),
-                                                    ],
+                                                  child: Center(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        const Spacer(),
+                                                        Icon(
+                                                          CupertinoIcons
+                                                              .cart_fill,
+                                                          color: Colors.black,
+                                                          size: context
+                                                                  .screenSize *
+                                                              0.12,
+                                                        ),
+                                                        const Spacer(),
+                                                        MyText(
+                                                          fontSize: context
+                                                                  .screenSize *
+                                                              fourFont,
+                                                          fieldName:
+                                                              'اطلب الان',
+                                                          direction: true,
+                                                        ),
+                                                        const Spacer(),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                cnr.addToFavsProductList(
-                                                    productId);
-                                              },
-                                              child: Container(
-                                                width: context.screenWidth * 15,
-                                                height:
-                                                    context.screenHeight * 7.5,
-                                                decoration: BoxDecoration(
-                                                  color: cnr.isFavorite
-                                                      ? Colors.green
-                                                      : Colors.white,
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                    Radius.circular(10),
+                                              const Spacer(
+                                                flex: 01,
+                                              ),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  cnr.addToFavsProductList(
+                                                      productId);
+                                                },
+                                                child: Container(
+                                                  width:
+                                                      context.screenWidth * 15,
+                                                  height: context.screenHeight *
+                                                      7.5,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                      Radius.circular(10),
+                                                    ),
+                                                  ),
+                                                  child: Icon(
+                                                    Icons.delete,
+                                                    color: Colors.red,
+                                                    size: context.screenSize *
+                                                        0.10,
                                                   ),
                                                 ),
-                                                child: Icon(
-                                                  Icons.delete,
-                                                  color: Colors.black,
-                                                  size:
-                                                      context.screenSize * 0.10,
-                                                ),
                                               ),
-                                            ),
-                                          ],
+                                              const Spacer(
+                                                flex: 01,
+                                              ),
+                                            ],
+                                          ),
                                         ),
+                                        const Spacer(),
                                       ],
                                     ),
-                                    const Spacer(
-                                      flex: 01,
-                                    ),
+                                    const Spacer(),
                                   ],
                                 ),
                               ),

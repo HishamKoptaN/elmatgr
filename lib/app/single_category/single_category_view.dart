@@ -10,15 +10,6 @@ class SingleCategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Center(
-          child: MyText(
-            text: 'بناطيل',
-            fontSize: context.screenSize * 0.1,
-          ),
-        ),
-      ),
       body: Center(
         child: GetBuilder<SingleCategoryController>(
           init: SingleCategoryController(),

@@ -44,7 +44,7 @@ class _OffersState extends State<Offers> {
           ),
         ),
         Container(
-          height: context.screenHeight * 12,
+          height: context.screenHeight * 10,
           width: context.screenWidth * 95,
           decoration: BoxDecoration(
             border: Border.all(color: iconColor, style: BorderStyle.solid),

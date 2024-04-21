@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import '../../drawer/my_drawer.dart';
 import '../../helpers/constants.dart';
 import '../categories/categories_view.dart';
 import '../favorites/my_favorites_view.dart';
@@ -27,9 +28,17 @@ class _HomePageState extends State<NavigateBarScreen> {
         init: NavigatorBottomBarCnr(),
         builder: (cnr) {
           return Scaffold(
+            drawer: const MyDrawer(),
             appBar: AppBar(
-              elevation: 0,
               centerTitle: true,
+              bottom: PreferredSize(
+                preferredSize: const Size.fromRadius(1.0),
+                child: Container(
+                  color: Colors.grey,
+                  height: 2.0,
+                ),
+              ),
+              elevation: 0,
               actions: [
                 const Spacer(flex: 1),
                 // Icon(Icons.person, size: context.screenSize * 0.15),
@@ -55,107 +64,120 @@ class _HomePageState extends State<NavigateBarScreen> {
               ],
             ),
             resizeToAvoidBottomInset: true,
-            backgroundColor: Colors.white,
             body: SizedBox(child: cnr.pages[cnr.currentIndex]),
-            bottomNavigationBar: SalomonBottomBar(
-              currentIndex: cnr.currentIndex,
-              backgroundColor: Colors.white30,
-              onTap: (int index) async {
-                cnr.setCurrentIndex(index);
-              },
-              items: [
-                SalomonBottomBarItem(
-                  selectedColor: const Color.fromARGB(255, 42, 38, 2),
-                  unselectedColor: Colors.grey,
-                  icon: ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.black, Colors.black],
-                      ).createShader(bounds);
-                    },
-                    child: Icon(
-                      Icons.favorite,
-                      size: context.screenSize * 0.10,
-                      color: Colors.white,
+            bottomNavigationBar: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(15),
+                ),
+              ),
+              margin: EdgeInsets.all(context.screenSize * 0.05),
+              child: SalomonBottomBar(
+                curve: Curves.slowMiddle,
+                currentIndex: cnr.currentIndex,
+                backgroundColor: Colors.white60,
+                onTap: (int index) async {
+                  cnr.setCurrentIndex(index);
+                },
+                items: [
+                  SalomonBottomBarItem(
+                    selectedColor: Colors.green,
+                    unselectedColor: Colors.grey,
+                    icon: ShaderMask(
+                      shaderCallback: (Rect bounds) {
+                        return const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.black],
+                        ).createShader(bounds);
+                      },
+                      child: Icon(
+                        Icons.favorite,
+                        size: context.screenSize * 0.10,
+                        color: Colors.white,
+                      ),
+                    ),
+                    title: Text(
+                      "المفضله",
+                      style:
+                          TextStyle(fontSize: context.screenSize * threeFont),
                     ),
                   ),
-                  title: Text(
-                    "المفضله",
-                    style: TextStyle(fontSize: context.screenSize * threeFont),
-                  ),
-                ),
-                SalomonBottomBarItem(
-                  selectedColor: const Color.fromARGB(255, 42, 38, 2),
-                  unselectedColor: Colors.grey,
-                  icon: ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.black, Colors.black],
-                      ).createShader(bounds);
-                    },
-                    child: Icon(
-                      Icons.shopping_cart_rounded,
-                      size: context.screenSize * 0.10,
-                      color: Colors.white,
+                  SalomonBottomBarItem(
+                    selectedColor: Colors.green,
+                    unselectedColor: Colors.grey,
+                    icon: ShaderMask(
+                      shaderCallback: (Rect bounds) {
+                        return const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.black],
+                        ).createShader(bounds);
+                      },
+                      child: Icon(
+                        Icons.shopping_cart_rounded,
+                        size: context.screenSize * 0.10,
+                        color: Colors.white,
+                      ),
+                    ),
+                    title: Text(
+                      "سلة الطلبات",
+                      style:
+                          TextStyle(fontSize: context.screenSize * threeFont),
                     ),
                   ),
-                  title: Text(
-                    "سلة الطلبات",
-                    style: TextStyle(fontSize: context.screenSize * threeFont),
-                  ),
-                ),
-                // SalomonBottomBarItem(
-                //   selectedColor: const Color.fromARGB(255, 42, 38, 2),
-                //   unselectedColor: Colors.grey,
-                //   icon: ShaderMask(
-                //     shaderCallback: (Rect bounds) {
-                //       return const LinearGradient(
-                //         begin: Alignment.topCenter,
-                //         end: Alignment.bottomCenter,
-                //         colors: [Colors.black, Colors.black],
-                //       ).createShader(bounds);
-                //     },
-                //     child: Icon(
-                //       Icons.category_rounded,
-                //       size: sizeIcon,
-                //       color: Colors.white,
-                //     ),
-                //   ),
-                //   title: Text(
-                //     "الفئات",
-                //     style: TextStyle(fontSize: sizeFont),
-                //   ),
-                // ),
-                SalomonBottomBarItem(
-                  selectedColor: const Color.fromARGB(255, 99, 92, 25),
-                  unselectedColor: Colors.grey,
-                  icon: ShaderMask(
-                    shaderCallback: (Rect bounds) {
-                      return const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.black,
-                          Colors.black,
-                        ],
-                      ).createShader(bounds);
-                    },
-                    child: Icon(
-                      Icons.home,
-                      size: context.screenSize * 0.10,
-                      color: Colors.white,
+                  SalomonBottomBarItem(
+                    selectedColor: Colors.green,
+                    unselectedColor: Colors.grey,
+                    icon: ShaderMask(
+                      shaderCallback: (Rect bounds) {
+                        return const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.black],
+                        ).createShader(bounds);
+                      },
+                      child: Icon(
+                        Icons.category_rounded,
+                        size: context.screenSize * 0.10,
+                        color: Colors.white,
+                      ),
+                    ),
+                    title: Text(
+                      "الفئات",
+                      style:
+                          TextStyle(fontSize: context.screenSize * threeFont),
                     ),
                   ),
-                  title: Text(
-                    "الرئيسيه",
-                    style: TextStyle(fontSize: context.screenSize * threeFont),
+                  SalomonBottomBarItem(
+                    selectedColor: Colors.green,
+                    unselectedColor: Colors.grey,
+                    icon: ShaderMask(
+                      shaderCallback: (Rect bounds) {
+                        return const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.black,
+                            Colors.black,
+                          ],
+                        ).createShader(bounds);
+                      },
+                      child: Icon(
+                        Icons.home,
+                        size: context.screenSize * 0.10,
+                        color: Colors.white,
+                      ),
+                    ),
+                    title: Text(
+                      "الرئيسيه",
+                      style:
+                          TextStyle(fontSize: context.screenSize * threeFont),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },

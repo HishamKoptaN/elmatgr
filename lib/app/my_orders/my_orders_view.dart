@@ -48,20 +48,26 @@ class _MyOrdersViewState extends State<MyOrdersView> {
                         child: Container(
                           height: context.screenHeight * 25,
                           width: context.screenWidth * 100,
-                          decoration: BoxDecoration(
-                            color: Colors.green[400],
-                            borderRadius: BorderRadius.circular(10),
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(77, 196, 194, 194),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50),
+                              bottomRight: Radius.circular(50),
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
+                                const Spacer(),
                                 Column(
                                   children: [
+                                    const Spacer(),
                                     MyText(
                                       fontSize: context.screenSize * threeFont,
-                                      fieldName: '${document['order_status']}',
+                                      fieldName:
+                                          'حالة الطلب : ${document['order_status']}',
                                       direction: true,
                                     ),
                                     const Spacer(),
@@ -71,6 +77,7 @@ class _MyOrdersViewState extends State<MyOrdersView> {
                                       height: context.screenHeight * 20,
                                       width: context.screenWidth * 35,
                                     ),
+                                    const Spacer(),
                                   ],
                                 ),
                                 const Spacer(
@@ -108,6 +115,7 @@ class _MyOrdersViewState extends State<MyOrdersView> {
                                     ),
                                   ],
                                 ),
+                                const Spacer(),
                               ],
                             ),
                           ),

@@ -2,6 +2,7 @@ import 'package:elmatgr/app/product_items/products_items_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../helpers/strings.dart';
+import '../categories/categories_view.dart';
 import '../favorites/my_favorites_view.dart';
 import '../my_orders/my_orders_view.dart';
 
@@ -10,9 +11,11 @@ class NavigatorBottomBarCnr extends GetxController {
   final List<Widget> pages = [
     const MyFavoritesView(),
     const MyOrdersView(),
+    const CategoriesView(),
+    // MyAppTest()
     const ProductItemsView(),
   ];
-  int currentIndex = 2;
+  int currentIndex = 3;
   void setCurrentIndex(int index) async {
     switch (index) {
       case 0:

@@ -22,9 +22,12 @@ class _ProductItemsViewState extends State<ProductItemsView> {
       body: Column(
         children: [
           const SizedBox(child: Offers()),
-          SizedBox(
+          const Spacer(),
+          Container(
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15))),
             width: context.screenWidth * 100,
-            height: context.screenHeight * 62.5,
+            height: context.screenHeight * 60,
             child: StreamBuilder(
               stream: _firestore.collection('products').snapshots(),
               builder: (BuildContext context,
@@ -59,8 +62,10 @@ class _ProductItemsViewState extends State<ProductItemsView> {
                               height: context.screenHeight * 80,
                               width: context.screenWidth * 60,
                               decoration: BoxDecoration(
-                                color: Colors.green[400],
-                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.grey),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -73,19 +78,23 @@ class _ProductItemsViewState extends State<ProductItemsView> {
                                         const Spacer(
                                           flex: 01,
                                         ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Get.to(
-                                              ProDetView(
-                                                proId,
-                                              ),
-                                            );
-                                          },
-                                          child: Image.network(
-                                            document['product_image'],
-                                            fit: BoxFit.cover,
-                                            height: context.screenHeight * 25,
-                                            width: context.screenWidth * 100,
+                                        Container(
+                                          color: const Color.fromARGB(
+                                              77, 196, 194, 194),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              Get.to(
+                                                ProDetView(
+                                                  proId,
+                                                ),
+                                              );
+                                            },
+                                            child: Image.network(
+                                              document['product_image'],
+                                              fit: BoxFit.cover,
+                                              height: context.screenHeight * 25,
+                                              width: context.screenWidth * 100,
+                                            ),
                                           ),
                                         ),
                                         const Spacer(
